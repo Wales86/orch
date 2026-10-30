@@ -68,3 +68,6 @@ The start queue and CPU gate (orch has `maxRunning` instead), seat rules, hosted
 ## Test
 
 `test/smoke.sh [empty-dir]` runs init → ticket → spawn → wait → review → land → prune on a throwaway repo with a fake engine. It spends nothing.
+
+
+To start: open a herdr tab in menu-filament, run claude, and say: "Coordinate this project with orch: read orch manual, then help me write spec/vision.md from .ai/to-do.md
