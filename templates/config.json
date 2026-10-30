@@ -1,0 +1,21 @@
+{
+  "roles": {
+    "worker": { "engine": "claude", "model": "sonnet", "effort": "high" },
+    "reviewer": { "engine": "agy", "model": "gemini-4-argon-high" },
+    "scout": { "engine": "agy", "model": "gemini-3.8-flash-medium" },
+    "researcher": { "engine": "claude", "model": "opus", "effort": "high" },
+    "judge": { "engine": "claude", "model": "opus", "effort": "high" }
+  },
+  "timeout": "60m",
+  "maxRunning": 3,
+  "prepare": "",
+  "claude": {
+    "permissionMode": "auto",
+    "allow": [],
+    "deny": ["Read(**/.env)", "Read(**/.env.*)"]
+  },
+  "agy": {
+    "allow": ["git", "ls", "cat", "head", "tail", "wc", "rg", "grep", "find", "diff"]
+  },
+  "herdr": { "jobTabs": true, "closeTabOnFinish": true }
+}

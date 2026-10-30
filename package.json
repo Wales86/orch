@@ -1,0 +1,10 @@
+{
+  "name": "orch",
+  "version": "0.1.0",
+  "description": "One coordinator, many headless agent jobs (Claude Code, Antigravity) in Git worktrees, with herdr as the window.",
+  "type": "module",
+  "bin": { "orch": "bin/orch.mjs" },
+  "engines": { "node": ">=24" },
+  "scripts": { "test": "test/smoke.sh" },
+  "license": "MIT"
+}
