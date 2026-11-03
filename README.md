@@ -26,7 +26,7 @@ Then open a coordinator, best as Claude Code in a herdr tab, and tell it: *"Coor
 |---|---|---|
 | this repo | CLI, runner, hooks, default role prompts (`roles/`), templates | its own repo |
 | `<project>/spec/` | `vision.md`, `build.md` (board), `features/{planned,active,done,dropped}/FNNN-slug/` | yes |
-| `<project>/.orch/config.json` | engine, model, effort per role; timeout; `prepare`; permissions | yes |
+| `<project>/.orch/config.json` | engine, model, effort per role; timeout; `upstream` (spawn refuses a new branch that is behind it, e.g. `origin/master`); `prepare`; permissions | yes |
 | `<project>/.orch/reminders.md` | rules every worker must follow and report on | yes |
 | `<project>/.orch/roles/<role>.md` | optional override of a role prompt | yes |
 | `<project>/.orch/jobs/<id>/` | one job: task, log, state, result, note, commits, session | no |

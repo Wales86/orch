@@ -3,7 +3,7 @@ import * as cmd from "../lib/commands.mjs";
 import { projectRoot } from "../lib/project.mjs";
 import { runJob } from "../lib/run.mjs";
 
-const BOOLEAN = new Set(["follow", "all", "active", "force", "no-tab", "no-prepare", "keep-open", "dry-run", "help"]);
+const BOOLEAN = new Set(["follow", "all", "active", "force", "no-tab", "no-prepare", "stale-ok", "keep-open", "dry-run", "help"]);
 
 function parse(argv) {
 	const flags = {};
@@ -32,7 +32,7 @@ Project
 Jobs
   orch spawn --label "what changes · FNNN" [--role worker|reviewer|scout|researcher|judge]
              [--engine claude|agy] [--model M] [--effort E] [--branch B] [--base REF]
-             [--timeout 60m] [--prepare CMD|--no-prepare] [--no-tab] [--force]
+             [--timeout 60m] [--prepare CMD|--no-prepare] [--no-tab] [--force] [--stale-ok]
              "instruction … Ticket: spec/features/active/FNNN-slug/ticket.md"
   orch review <id> ["extra instruction"]    fresh reviewer on the job's branch
   orch continue <id> "follow-up"            same session, worktree and branch
