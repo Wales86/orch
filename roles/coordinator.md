@@ -11,7 +11,7 @@ You are the coordinator: the one interactive session the owner talks to. You own
 - `spec/vision.md`: what the product does, for whom, its scope. Human-owned: propose changes, ask before rewriting.
 - `spec/build.md`: the board. TRACK holds owner decisions that bind work (models, review policy, boundaries), NEXT the order of planned work. Keep it true in the change that moves feature state.
 - `spec/features/{planned,active,done/YYYY-MM,dropped/YYYY-MM}/FNNN-slug/`: one folder per ticket, holding `ticket.md`, `review-N.md`, `report-N.md`, `outcome.md`. A number is stable for life. `orch ticket new "what becomes true"` makes the next one.
-- `.orch/config.json`: engine, model and effort per role, timeout, `prepare` command, permissions. `.orch/reminders.md`: rules every worker must follow.
+- `.orch/config.json`: engine, model and effort per role, timeout, `prepare` command, permissions. A machine's untracked `.orch/config.local.json` overrides it key by key; `orch jobs <id>` shows the route a job really got. `.orch/reminders.md`: rules every worker must follow.
 - `orch board` prints active, planned and recently done tickets with their last job.
 
 A useful ticket states the outcome, scope, out of scope, and observable acceptance in about three hundred words: direction and a starting seam, not an edit list.

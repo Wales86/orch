@@ -59,6 +59,8 @@ A reviewer on a different model family than the worker gives independent priors,
 
 - Claude jobs: `--permission-mode auto` (the classifier decides), plus `allow` / `deny` from config. `.env` reads are denied by default.
 - agy jobs: headless agy can't ask, so only the programs in `agy.allow` may run (`command(<program>)` rules). `--dangerously-skip-permissions` is never used.
+- agy workers: set `agy.mode` to `"accept-edits"`, `agy.sandbox` to `true` and `agy.allow` to `["*"]`. The job then edits and runs any command without asking, but its terminal is confined to the worktree, the job folder and the repository's `.git` (a worktree commits there).
+- Per-machine routes: `.orch/config.local.json` (untracked) is merged over `.orch/config.json`, section by section. Use it where a machine has an engine the others lack.
 - A worktree isn't a sandbox. Jobs run as your user.
 
 ## Not taken from Limen (yet)

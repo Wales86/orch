@@ -15,7 +15,9 @@
     "deny": ["Read(**/.env)", "Read(**/.env.*)"]
   },
   "agy": {
-    "allow": ["git", "ls", "cat", "head", "tail", "wc", "rg", "grep", "find", "diff"]
+    "allow": ["git", "ls", "cat", "head", "tail", "wc", "rg", "grep", "find", "diff"],
+    "mode": "",
+    "sandbox": false
   },
   "herdr": { "jobTabs": true, "closeTabOnFinish": true }
 }
