@@ -3,7 +3,7 @@ import * as cmd from "../lib/commands.mjs";
 import { projectRoot } from "../lib/project.mjs";
 import { runJob } from "../lib/run.mjs";
 
-const BOOLEAN = new Set(["follow", "all", "active", "force", "no-tab", "no-prepare", "stale-ok", "keep-open", "dry-run", "help"]);
+const BOOLEAN = new Set(["follow", "all", "active", "force", "no-tab", "no-prepare", "stale-ok", "keep-open", "merged", "dry-run", "help"]);
 
 function parse(argv) {
 	const flags = {};
@@ -42,6 +42,7 @@ Jobs
   orch steer <id> "correction"              delivered after the next tool call (claude only)
   orch stop <id> ["reason"]
   orch land <id> [--keep-open]              merge into the current branch, close its tickets
+  orch land <id> --merged [--force]         the branch was merged elsewhere (a squashed PR): only clean up
   orch prune [--dry-run]                    remove worktrees of merged or read-only jobs
 
 <id> is a job id, a unique id suffix, or a unique label.`;
